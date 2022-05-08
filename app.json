@@ -1,0 +1,19 @@
+{
+  "name": "vscode on heroku",
+  "description": "SHIT",
+
+  "keywords": [
+    "node",
+    "express",
+    "code-server",
+    "cloud-development",
+    "heroku-api"
+  ],
+  "env": {
+    "PASSWORD": {
+      "description": "Create a password to log in to code-server with",
+      "required": true
+    }
+  },
+  "stack": "container"
+}
