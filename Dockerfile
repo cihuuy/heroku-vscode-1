@@ -18,7 +18,7 @@ RUN curl https://rclone.org/install.sh | sudo bash
 RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh 
 RUN sudo bash nodesource_setup.sh
 RUN sudo apt install nodejs
-RUN apt-get install -y ssh git nano curl wget zip unzip docker.io docker python
+RUN apt-get install -y ssh git nano curl wget zip unzip docker.io docker python python-pip iputils-ping
 RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
 
@@ -50,4 +50,5 @@ ENV PORT=8080
 
 # Use our custom entrypoint script first
 COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
+COPY deploy-container/setting.conf /usr/bin/deploy-container-setting.conf
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
