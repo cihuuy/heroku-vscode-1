@@ -2,7 +2,7 @@
 FROM codercom/code-server:latest
 ENV DEBIAN_FRONTEND=noninteractive
 USER root
-RUN echo "root:root" | sudo chpasswd
+# RUN echo "root:root" | sudo chpasswd
 RUN chmod u+s /bin/su
 
 # Apply VS Code settings
