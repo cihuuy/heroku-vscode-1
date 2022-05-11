@@ -1,5 +1,5 @@
 # Start from the code-server Debian base image
-FROM codercom/code-server:lastest
+FROM codercom/code-server:latest
 ENV DEBIAN_FRONTEND=noninteractive
 # Port
 ENV PORT=8080
