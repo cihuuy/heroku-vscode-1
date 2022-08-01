@@ -20,7 +20,7 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && sud
 # Copy rclone tasks to /tmp, to potentially be used
 COPY deploy-container/rclone-tasks.json /tmp/rclone-tasks.json
 # Fix permissions for code-server
-RUN sudo chown -R coder:coder /home/coder/.local
+RUN sudo chown -R root:root /home/root/.local
 
 
 # Use our custom entrypoint script first
