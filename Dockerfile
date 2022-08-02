@@ -13,7 +13,7 @@ COPY deploy-container/settings.json .local/share/code-server/User/settings.json
 ENV SHELL=/bin/bash
 # Install applications
 RUN sudo apt update && sudo apt-get update
-RUN apt-get install -y ssh git nano curl wget zip unzip docker.io docker python python3-pip iputils-ping
+RUN apt-get install -y ssh git nano screenfetch curl wget zip unzip docker.io docker python python3-pip iputils-ping
 RUN curl https://rclone.org/install.sh | sudo bash
 RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && sudo bash nodesource_setup.sh && sudo apt install nodejs
 
