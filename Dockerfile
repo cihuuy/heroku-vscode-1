@@ -13,7 +13,7 @@ COPY deploy-container/settings.json .local/share/code-server/User/settings.json
 ENV SHELL=/bin/bash
 # Install applications
 RUN sudo apt update && sudo apt-get update
-RUN apt-get install -y ssh git nano screenfetch curl wget zip unzip docker.io docker python python3-pip iputils-ping
+RUN apt-get install -y ssh git nano screenfetch curl wget zip unzip docker.io docker python python3-pip iputils-ping openvpn
 RUN curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
 RUN sudo chmod +x msfinstall
 RUN sudo ./msfinstall
