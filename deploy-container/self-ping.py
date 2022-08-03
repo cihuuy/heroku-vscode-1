@@ -9,11 +9,11 @@ if __name__ == "__main__":
         app_name = os.getenv("APP_NAME")
         while True:
             try:
-                os.system(f"curl https://{app_name}.herokuapp.com")
+                os.system(f"curl https://{app_name}.herokuapp.com/?folder=/home/coder/project")
             except:
                 print("Ping failed, retrying...")
                 try:
-                    os.system(f"curl -s https://{app_name}.herokuapp.com")
+                    os.system(f"curl -s https://{app_name}.herokuapp.com/?folder=/home/coder/project")
                 except:
                     print("Cannot ping app, terminating...")
             sleep(600000)
