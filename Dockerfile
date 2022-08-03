@@ -15,9 +15,6 @@ ENV SHELL=/bin/bash
 RUN sudo apt update && sudo apt-get update
 RUN apt-get install -y ssh git nano screenfetch curl wget zip unzip gzip docker.io docker python python3-pip python-setuptools iputils-ping 
 RUN pip install pyinstaller
-RUN git clone https://github.com/Screetsec/TheFatRat.git
-RUN sudo mv TheFatRat /usr/local/bin
-RUN sudo chmod +x /usr/local/bin/TheFatRat/setup.sh
 RUN wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 RUN tar -zxvf ngrok-v3-stable-linux-amd64.tgz
 RUN sudo mv ngrok /usr/local/bin
