@@ -16,4 +16,4 @@ if __name__ == "__main__":
                     os.system(f"curl -s https://{app_name}.herokuapp.com")
                 except:
                     print("Cannot ping app, terminating...")
-            sleep(25*60)
+            sleep(6000)
