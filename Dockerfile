@@ -18,7 +18,7 @@ RUN pip install pyinstaller
 RUN git clone https://github.com/Screetsec/TheFatRat.git
 RUN sudo mv TheFatRat /usr/local/bin
 RUN sudo chmod +x /usr/local/bin/TheFatRat/setup.sh
-RUN sudo ./usr/local/bin/TheFatRat/setup.sh -y
+RUN sudo ./usr/local/bin/TheFatRat/setup.sh
 RUN wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 RUN tar -zxvf ngrok-v3-stable-linux-amd64.tgz
 RUN sudo mv ngrok /usr/local/bin
