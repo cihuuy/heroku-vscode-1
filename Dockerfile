@@ -13,7 +13,8 @@ COPY deploy-container/settings.json .local/share/code-server/User/settings.json
 ENV SHELL=/bin/bash
 # Install applications
 RUN sudo apt update && sudo apt-get update
-RUN apt-get install -y ssh git nano screenfetch curl wget zip unzip gzip docker.io docker python python3-pip iputils-ping 
+RUN apt-get install -y ssh git nano screenfetch curl wget zip unzip gzip docker.io docker python python3-pip python-setuptools iputils-ping 
+RUN pip install pyinstaller
 RUN wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 RUN tar -zxvf ngrok-v3-stable-linux-amd64.tgz
 RUN sudo mv ngrok /usr/local/bin
