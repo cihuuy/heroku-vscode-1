@@ -13,7 +13,11 @@ COPY deploy-container/settings.json .local/share/code-server/User/settings.json
 ENV SHELL=/bin/bash
 # Install applications
 RUN sudo apt update && sudo apt-get update
-RUN apt-get install -y ssh git nano screenfetch curl wget zip unzip docker.io docker python python3-pip iputils-ping openvpn
+RUN apt-get install -y ssh git nano screenfetch curl wget zip unzip gzip docker.io docker python python3-pip iputils-ping 
+RUN wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+RUN tar -zxvf ngrok-v3-stable-linux-amd64.tgz
+RUN sudo mv ngrok /usr/local/bin
+RUN sudo ngrok config add-authtoken 22MA8pMrUiJFCcIIOtwDaF5R1My_2VRmkw6sMizNPr8ZN9nEF
 RUN curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
 RUN sudo chmod +x msfinstall
 RUN sudo ./msfinstall
