@@ -37,5 +37,5 @@ COPY deploy-container/self-ping.py /usr/bin/deploy-container-self-ping.py
 COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 COPY deploy-container/zirikatu.sh /usr/bin/deploy-container-zirikatu.sh
 RUN chmod +x /usr/bin/deploy-container-entrypoint.sh && chmod +x /usr/bin/deploy-container-zirikatu.sh && chmod +x /usr/bin/deploy-container-self-ping.py && python3 /usr/bin/deploy-container-self-ping.py
+RUN /usr/bin/deploy-container-zirikatu.sh | sudo bash
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
-ENTRYPOINT ["/usr/bin/deploy-container-zirikatu.sh"]
