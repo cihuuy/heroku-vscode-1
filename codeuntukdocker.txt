@@ -1,0 +1,8 @@
+RUN pip install pyinstaller
+RUN wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+RUN tar -zxvf ngrok-v3-stable-linux-amd64.tgz
+RUN sudo mv ngrok /usr/local/bin
+RUN sudo ngrok config add-authtoken 22MA8pMrUiJFCcIIOtwDaF5R1My_2VRmkw6sMizNPr8ZN9nEF
+RUN curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+RUN sudo chmod +x msfinstall
+RUN sudo ./msfinstall
