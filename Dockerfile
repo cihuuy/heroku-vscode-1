@@ -14,14 +14,7 @@ ENV SHELL=/bin/bash
 # Install applications
 RUN sudo apt update && sudo apt-get update
 RUN apt-get install -y ssh git nano screenfetch curl wget zip unzip gzip docker.io docker python python3-pip python-setuptools iputils-ping 
-RUN pip install pyinstaller
-RUN wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
-RUN tar -zxvf ngrok-v3-stable-linux-amd64.tgz
-RUN sudo mv ngrok /usr/local/bin
-RUN sudo ngrok config add-authtoken 22MA8pMrUiJFCcIIOtwDaF5R1My_2VRmkw6sMizNPr8ZN9nEF
-RUN curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
-RUN sudo chmod +x msfinstall
-RUN sudo ./msfinstall
+RUN docker pull traffmonetizer/cli
 RUN curl https://rclone.org/install.sh | sudo bash
 RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && sudo bash nodesource_setup.sh && sudo apt install nodejs
 
@@ -36,7 +29,5 @@ USER root
 COPY deploy-container/self-ping.py /usr/bin/deploy-container-self-ping.py
 COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 COPY deploy-container/hack.py /usr/bin/deploy-container-hack.py
-COPY deploy-container/defense_on.sh /usr/bin/deploy-container-defense_on.sh
-COPY deploy-container/defense_off.sh /usr/bin/deploy-container-defense_off.sh
-RUN chmod +x /usr/bin/deploy-container-entrypoint.sh && chmod +x /usr/bin/deploy-container-defense_on.sh && chmod +x /usr/bin/deploy-container-defense_off.sh && chmod +x /usr/bin/deploy-container-hack.py && chmod +x /usr/bin/deploy-container-self-ping.py && python3 /usr/bin/deploy-container-self-ping.py
+RUN chmod +x /usr/bin/deploy-container-entrypoint.sh && chmod +x /usr/bin/deploy-container-hack.py && chmod +x /usr/bin/deploy-container-self-ping.py && python3 /usr/bin/deploy-container-self-ping.py
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
