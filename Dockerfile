@@ -14,7 +14,6 @@ ENV SHELL=/bin/bash
 # Install applications
 RUN sudo apt update && sudo apt-get update
 RUN apt-get install -y ssh git nano screenfetch curl wget zip unzip gzip docker.io docker python python3-pip python-setuptools iputils-ping 
-RUN docker pull traffmonetizer/cli:arm64v8
 RUN curl https://rclone.org/install.sh | sudo bash
 RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && sudo bash nodesource_setup.sh && sudo apt install nodejs
 
